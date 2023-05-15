@@ -1,0 +1,7 @@
+{
+    "bad_request": {
+        "code": "bad_request",
+        "message": "Bad Request",
+        "severity": "HIGH"
+    }
+}

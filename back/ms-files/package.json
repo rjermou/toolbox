@@ -1,0 +1,32 @@
+{
+  "name": "ms-files",
+  "version": "1.0.0",
+  "description": "file manager",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "mocha -t 20000 --recursive -R spec --require ./scripts/mocha-bootload.js test/unit --timeout 600000",
+    "lint": "standard",
+    "coverage": "nyc --check-coverage --reporter=lcov --reporter=text mocha --recursive --require ./scripts/mocha-bootload.js test/unit --timeout 600000"
+  },
+  "keywords": [
+    "files"
+  ],
+  "author": "Roberto Jermou",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "getconfig": "^4.5.0",
+    "joi": "^17.9.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "proxyquire": "^2.1.3",
+    "sinon-chai": "^3.7.0",
+    "sinon-express-mock": "^2.2.1",
+    "standard": "^17.0.0"
+  }
+}
