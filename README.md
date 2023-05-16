@@ -65,6 +65,22 @@ El reporte se encuentra en ./coverage/lcov-report/index.html
 - Iniciar el servidor: `npm start`
 ----
 
+### Ejecución en docker
+
+*Pre-Requisitos:* Tener instalado docker.
+
+Los comando deben ejecutarse estando en el directorio donde se encuentra el archivo Dockerfile. (/toolbox/back/ms-files)
+
+Para construir la imágen:
+`docker build . -t <username>/ms-files`
+
+Para correrla:
+`docker run -p 3031:3031 -d <username>/ms-files`
+
+Para probarla:
+Hacer una petición a http://localhost:3031/files/list
+----
+
 # FRONTEND: front-files
 
 La app nos permitirá listar el contenido de los archivos .csv.
@@ -86,3 +102,20 @@ La app fue creada con [Create React App](https://github.com/facebook/create-reac
 - Clonar el repositorio
 - Instalar dependencias: `npm install`
 - Iniciar el servidor: `npm start`
+
+----
+### Ejecución en docker
+
+*Pre-Requisitos:* Tener instalado docker.
+
+Los comando deben ejecutarse estando en el directorio donde se encuentra el archivo Dockerfile. (/toolbox/front/files-front)
+
+Para construir la imágen:
+`docker build . -t <username>/files-front`
+
+Para correrla:
+`docker run -p 3000:80 -d <username>/files-front`
+
+Para probarla:
+Abrir el browser en http://localhost:3000
+
