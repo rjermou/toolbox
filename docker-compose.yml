@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  ms-files:
+    build:
+      dockerfile: Dockerfile
+      context: "./back/ms-files"
+    ports:
+      - 3031:3031
+  files-front:
+    build:
+      dockerfile: Dockerfile
+      context: "./front/files-front"
+    depends_on:
+      - ms-files
+    ports:
+      - 3000:80

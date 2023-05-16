@@ -1,6 +1,18 @@
 # challenge
 ----
 
+En este challenge se desarrolló un frontend que consume datos de un API (backend). Ambos desarrollados para este fin.
+El frontend muestra la información obtenida de la API respetando las pautas descriptas en el [documento de requerimientos](https://github.com/rjermou/toolbox/blob/main/challenge.pdf).
+
+
+### Ejecución con docker-compose
+
+Estando en el directorio (/toolbox/) donde se encuentra el archivo docker-compose.yml ejecutar:
+`docker-compose up --build`
+
+Esto levanta una api node para el back (http://localhost:3031) y una app react con nginx (http://localhost:3000)
+
+----
 # BACKEND: ms-files
 
 El ms-files nos permitirá recuperar información sobre archivos csv.
@@ -81,6 +93,7 @@ Para probarla:
 Hacer una petición a http://localhost:3031/files/list
 ----
 
+
 # FRONTEND: front-files
 
 La app nos permitirá listar el contenido de los archivos .csv.
@@ -118,4 +131,3 @@ Para correrla:
 
 Para probarla:
 Abrir el browser en http://localhost:3000
-
