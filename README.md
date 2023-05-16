@@ -11,6 +11,7 @@ El ms-files nos permitirá recuperar información sobre archivos csv.
 - express
 - axios - http
 - joi — validación de objetos
+- nyc - reporte de cobertura
 
 ### Versión de node
   Utiliza la última LTS (18.15.0).
@@ -64,5 +65,24 @@ El reporte se encuentra en ./coverage/lcov-report/index.html
 - Iniciar el servidor: `npm start`
 ----
 
-# FRONTEND:
+# FRONTEND: front-files
 
+La app nos permitirá listar el contenido de los archivos .csv.
+
+----
+## Stack de desarrollo
+- node.js, npm
+- react, react-bootstrap
+
+La app fue creada con [Create React App](https://github.com/facebook/create-react-app).
+
+----
+## ¿Cómo Comenzar?
+
+### Pre-requisitos
+- Tener instalado Node JS
+
+### Ejecución
+- Clonar el repositorio
+- Instalar dependencias: `npm install`
+- Iniciar el servidor: `npm start`

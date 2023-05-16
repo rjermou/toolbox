@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "5545a26b-983a-4f05-84dc-d645754e86a9",
+		"name": "ToolBox-Files",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18583096",
+		"_collection_link": "https://galactic-shuttle-562599.postman.co/workspace/MuniDigital~4c91b045-ab13-44bc-8da1-04a3164f408e/collection/18583096-5545a26b-983a-4f05-84dc-d645754e86a9?action=share&creator=18583096&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "getFiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3031/files/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3031",
+					"path": [
+						"files",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3031/files/data?fileName=test2.csv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3031",
+					"path": [
+						"files",
+						"data"
+					],
+					"query": [
+						{
+							"key": "fileName",
+							"value": "test2.csv"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
