@@ -65,6 +65,12 @@ Para correr los casos de prueba: `npm test` ó `npm run test`
 Para crear el reporte de coverage: `npm run coverage`
 El reporte se encuentra en ./coverage/lcov-report/index.html
 
+
+## Documentación (swagger)
+
+Ejecutando la aplicación la documentación de la API estará disponible en **http:localhost:3031/api-docs**
+Tambien, en el directorio /toolbox/back/ms-files/postman, se encuentra una postman collection.
+
 ----
 ## ¿Cómo Comenzar?
 
