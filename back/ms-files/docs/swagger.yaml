@@ -1,0 +1,76 @@
+swagger: "2.0"
+info:
+  description: "ms-files"
+  version: "1.0.0"
+  title: "ms-files"
+host: "localhost:3031"
+schemes:
+- "http"
+paths:
+  /files/data:
+    get:
+      description: Get File's data
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: fileName
+        description: "Filename of the file"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: Returns filename and details.
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/FileContent"
+  /files/list:
+    get:
+      description: Get a list of files
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Returns all filenames.
+          schema:
+            type: "object"
+            properties:
+              data:
+                type: "object"
+                properties:
+                  files:
+                    type: "array"
+                    items:
+                      $ref: "#/definitions/FileNames"
+definitions:
+  FileContent:
+    type: "object"
+    properties:
+      file:
+        type: "string"
+        example: "test2.csv"
+      lines:
+        type: "array"
+        items:
+          $ref: "#/definitions/FileData"
+  FileData:
+    type: "object"
+    properties:
+      text:
+        type: "string"
+        example: "YknElvGulJgxOXWycNocvhvzeflDrO"
+      number:
+        type: "string"
+        example: "76831021"
+      hex:
+        type: "string"
+        example: "c7299eeacaaaca462148f4e08015900c"
+  FileNames:
+    type: "string"
+    example: "test2.csv"
+ 
