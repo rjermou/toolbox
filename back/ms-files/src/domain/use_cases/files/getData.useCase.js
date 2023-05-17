@@ -19,7 +19,10 @@ class FilesGetDataService {
         const linesResponse = []
         for (let i = 1; i < lines.length; i++) {
           const items = lines[i].split(',')
-          if (items.length === 4) {
+          if (items.length === 4 &&
+            this.textIsCorrect(items[1]) &&
+            this.numIsCorrect(items[2]) &&
+            this.hexIsCorrect(items[3])) {
             const element = Object.assign({}, {
               text: items[1],
               number: items[2],
@@ -37,6 +40,28 @@ class FilesGetDataService {
       }
     }
     return r
+  }
+
+  textIsCorrect (text) {
+    if (text !== null && text.trim() !== '') {
+      return true
+    }
+    return false
+  }
+
+  numIsCorrect (num) {
+    if (num !== null && num.trim() !== '' && !isNaN(num)) {
+      return true
+    }
+    return false
+  }
+
+  hexIsCorrect (hex) {
+    const hex32Pattern = '^[0-9a-fA-F]{32}$'
+    if (hex !== null && hex.trim() !== '' && hex.match(hex32Pattern)) {
+      return true
+    }
+    return false
   }
 }
 
