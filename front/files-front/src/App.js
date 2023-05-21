@@ -1,12 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import Search from './components/search';
+import Navbar from "./components/Navbar";
+import Search from './components/Search';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 function App() {
   return (
-    <div>
-      <Search/>
-    </div>
+    <Provider store={store}>
+      <Navbar />
+      <Search />
+    </Provider>
   );
 }
 
