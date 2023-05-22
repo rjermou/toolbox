@@ -7,27 +7,30 @@ export const getFilesData = async (fileName) => {
       url = url + '?fileName=' + fileName + ".csv";
     }
     // call the api
-    const response = await axios({
-                method: 'get',
-                url: url,
-                headers: {
-                    Accept: 'application/json',
-                    ContentType: 'application/json'
-                }
-            });
-    // parse the response
     let filesArr = [];
-    for (let item of response.data) {
-        for (let itemContent of item.lines) {
-            const fileItem = {
-                fileName: item.file,
-                text: itemContent.text,
-                number: itemContent.number,
-                hex: itemContent.hex
+    try {
+        const response = await axios({
+                    method: 'get',
+                    url: url,
+                    headers: {
+                        Accept: 'application/json',
+                        ContentType: 'application/json'
+                    }
+                });
+        // parse the response
+        for (let item of response.data) {
+            for (let itemContent of item.lines) {
+                const fileItem = {
+                    fileName: item.file,
+                    text: itemContent.text,
+                    number: itemContent.number,
+                    hex: itemContent.hex
+                }
+                filesArr.push(fileItem);
             }
-            filesArr.push(fileItem);
         }
+    } catch (error) {
+        console.log(error);
     }
-
     return filesArr;
 }

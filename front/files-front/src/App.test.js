@@ -1,8 +1,21 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
+import '@testing-library/jest-dom'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+jest.mock('./components/Navbar', () => () => <div data-testid="navbar"/>);
+jest.mock('./components/Search', () => () => <div data-testid="search"/>);
+
+describe('App component', () => {
+
+  test('Navbar component to be in the App component', () => {
+    const { getByTestId } = render(<App />);
+    expect(getByTestId(/navbar/)).toBeInTheDocument();
+  });
+
+  test('Search component to be in the App component', () => {
+    const { getByTestId } = render(<App />);
+    expect(getByTestId(/search/)).toBeInTheDocument();
+  });
+
 });
+
