@@ -107,9 +107,27 @@ La app nos permitirá listar el contenido de los archivos .csv.
 ----
 ## Stack de desarrollo
 - node.js, npm
-- react, react-bootstrap
+- react
+- react-bootstrap
+- redux-toolkit - redux
+- axios - http
+- jest - tests unitarios
 
 La app fue creada con [Create React App](https://github.com/facebook/create-react-app).
+
+## Estructura de carpetas
+
+```bash
+.
+├── public/              # Archivos accesibles desde la web
+├── src/                 # Contiene código fuente
+|   ├── components       # Definición de componentes
+|   ├── data             # Peticiones a endpoints
+|   ├── store            # Redux: store y slices
+```
+## Testing unitario
+
+Para correr los casos de prueba: `npm test` ó `npm run test`
 
 ----
 ## ¿Cómo Comenzar?
